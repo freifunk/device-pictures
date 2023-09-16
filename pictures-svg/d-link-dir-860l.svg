@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 514 514" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Jan Alexander</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+    <cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <filter id="filter1592" x="-6.2108e-5" y=".00012821" width="1.0002" height=".99996" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.014936711"/>
+  </filter>
+ </defs>
+ <g>
+  <g fill="#0c0c0c" stroke="#666">
+   <ellipse cx="256.95" cy="460.2" rx="110.83" ry="39.991"/>
+   <path d="m147.72 56.596 2.8722 392.25 213.97 1.7879 3.7759-394.32z" filter="url(#filter1592)" stroke-width="1px"/>
+   <ellipse cx="258.04" cy="56.424" rx="109.84" ry="29.602"/>
+   <ellipse cx="258.25" cy="49.462" rx="105.05" ry="26.591"/>
+   <path d="m187.1 25.819 28.875-12.012h78.636l34.16 11.943z" stroke-width="1px"/>
+   <ellipse cx="258.07" cy="44.388" rx="100.49" ry="26.229"/>
+  </g>
+  <g fill="none" stroke="#666">
+   <ellipse cx="257.84" cy="43.304" rx="62.379" ry="14.327"/>
+   <circle cx="260.09" cy="291.3" r="14" stroke-width="1.0947"/>
+   <circle cx="260.48" cy="345.24" r="14" stroke-width="1.0947"/>
+  </g>
+  <g transform="translate(-742.07 -739.66)" fill="none" stroke="#0f0">
+   <path d="m1004.7 1027a5 5 0 0 1 2.3515 5.5397 5 5 0 0 1-4.677 3.7873 5 5 0 0 1-4.9298-3.4518 5 5 0 0 1 1.9593-5.6903"/>
+   <path d="m1002.2 1025.1v8.2066" stroke-width="1.1028px"/>
+  </g>
+  <g transform="translate(-741.84 -739.64)">
+   <circle cx="1002.3" cy="1084.9" r="6" fill="#0f0" stroke="#000" stroke-width=".9"/>
+   <g>
+    <path d="m1000.6 1080.5-0.64307 1.319-0.5924 0.5568-0.33008 1.073 0.41107 0.7157 1.359 0.1311 0.5435-0.6911 0.7292 0.015-0.8088-1.279-0.1174-1.5772z"/>
+    <path d="m998.6 1084.5-0.44018 0.3413-0.12671 0.6829-0.6247 0.4602-0.0801 0.7528 0.5329 1.9276 0.96015 0.1768 0.84863 0.01 0.35287-0.6553 1.657-0.104-0.5555-0.6642-0.2063-1.1106-0.6999-0.3804 0.022-0.953-0.55513 0.4753-0.9989-0.049z"/>
+    <path d="m1006.6 1081.2-0.6506 1.0617-1.418 0.1067-0.3375 0.831 0.3547 1.4234 2.706 0.013-0.3312 0.9155-2.2215-0.071 1.1803 1.394 0.6541 0.057-0.044 1.6297 1.3912-1.5874 0.4178-1.9404-0.3967-2.1837z"/>
+   </g>
+  </g>
+  <ellipse cx="257.63" cy="448.66" rx="106.93" ry="41.471" fill="#0c0c0c" stroke="#666" stroke-width="1.0029"/>
+  <rect x="151.14" y="382.19" width="213" height="66.928" fill="#0c0c0c"/>
+ </g>
+</svg>
