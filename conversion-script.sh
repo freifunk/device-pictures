@@ -118,12 +118,19 @@ create_symlink() {
     ln -sf raspberrypi.$EXT raspberry-pi-modelb-b-rev-2.$EXT
     ln -sf raspberrypi-2.$EXT raspberry-pi-2-model-b-rev-1.1.$EXT
     ln -sf raspberrypi-3.$EXT raspberry-pi-3-model-b-rev-1.2.$EXT
+    ln -sf raspberrypi.$EXT raspberry-pi.$EXT
+    ln -sf raspberrypi-2.$EXT raspberry-pi-2.$EXT
+    ln -sf raspberrypi-3.$EXT raspberry-pi-3.$EXT
     ln -sf tp-link-archer-c20i.$EXT tp-link-archer-c20i-alle.$EXT
+    ln -sf tp-link-archer-c20-v1.$EXT tp-link-archer-c20-v5.$EXT
+    ln -sf tp-link-archer-c2-v1.$EXT tp-link-archer-c2-v2.$EXT
+    ln -sf tp-link-archer-c2-v1.$EXT tp-link-archer-c2-v3.$EXT
     ln -sf tp-link-archer-c6-v2.$EXT tp-link-archer-c6-v2-eu-ru-jp.$EXT
     ln -sf tp-link-archer-c60-v2.$EXT tp-link-archer-c60-v1.$EXT
     ln -sf tp-link-archer-c7-v2.$EXT tp-link-archer-c59-v1.$EXT
     ln -sf tp-link-archer-c7-v2.$EXT tp-link-archer-c7-v4.$EXT
     ln -sf tp-link-archer-c7-v2.$EXT tp-link-archer-c7-v5.$EXT
+    ln -sf tp-link-archer-c7-v2.$EXT tp-link-archer-a7-v5.$EXT
     ln -sf tp-link-archer-c7-v2.$EXT tp-link-td-w8980-alle.$EXT
     ln -sf tp-link-archer-c7-v2.$EXT tp-link-td-w9980-alle.$EXT
     ln -sf tp-link-cpe210.$EXT tp-link-cpe210-v1.$EXT
@@ -218,6 +225,7 @@ create_symlink() {
     ln -sf xiaomi-mi-router-4a-gigabit-edition.$EXT xiaomi-mi-router-4a-100m-edition.$EXT
     ln -sf xiaomi-mi-router-4a-gigabit-edition.$EXT xiaomi-mi-router-4a-100m-international-edition.$EXT
     ln -sf xiaomi-mi-router-4c.$EXT xiaomi-mi-router-3g.$EXT
+    ln -sf avm-fritz-box-3370.$EXT avm-fritz-box-3370-rev-2-hynix-nand.$EXT    
 }
 
 cd pictures-svg
