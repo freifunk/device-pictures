@@ -8,7 +8,7 @@ The Pictures are available under [CC-BY-NC-SA 4.0](https://creativecommons.org/l
 
 ## Creating JPG and PNG
 
-To create jpg and png files, you need to have imagemagick and inkscape installed. Rune
+To create jpg and png files, you need to have imagemagick and `inkscape` installed. Rune
 
 `./conversion-script.sh`
 
@@ -17,7 +17,7 @@ Output is written to `pictures-png` and `pictures-jpg` respectively.
 ## Symlinks
 
 This repository symlinks version aliases instead of creating additional files.
-Initially this was checked using fdupes.
+Initially this was checked using `fdupes`.
 
 The Gluon Autoupdater looks for the Model Name in the manifest (except for raspberry pi, where the board name is used).
 The meshviewer receives the data from respondd through an aggregator like yanic, and therefore needs the whole Model Name too.
@@ -26,3 +26,21 @@ The firmware selector does cut off version related parts and looks for a picture
 Therefore, multiple symlinks are created in the `conversion-script.sh` which take care of this.
 
 For some devices, the Model name has been corrected in Openwrt throughout releases, which introduced a change and requires to keep an alias for the new name, as both versions may appear on a meshviewer (one with more recent firmware and one with less recent firmware).
+
+## Installation
+
+After creating the `pictures-jpg` and `pictures-svg` folder with symlinks, you can serve them through http to your liking.
+
+In [meshviewer](https://github.com/freifunk/meshviewer) you can add hwImages to your config.json:
+
+```
+    "hwImg": "https://map.aachen.freifunk.net/pictures-svg/{MODEL_NORMALIZED}.svg",
+```
+
+In the [firmware-selector](https://github.com/freifunk-darmstadt/gluon-firmware-selector) you can add
+
+```
+  preview_pictures: 'https://map.aachen.freifunk.net/pictures-jpg/',
+```
+
+to use the updated central source of jpg files.

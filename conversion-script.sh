@@ -57,7 +57,7 @@ fi
 for file in pictures-svg/*.svg; do
     normalized=${file##pictures-svg/}
     normalized=${normalized%.svg}
-    normalized="$(echo $normalized | sed -e 's/fritzbox/fritz-box/ig' -e 's/[^a-z0-9\-]/-/ig')"
+    normalized="$(echo $normalized | sed -e 's/fritzbox/fritz-box/ig' -e 's/[^a-z0-9\.\-]/-/ig')"
     
     if [ "$file" != "pictures-svg/$normalized.svg" ]; then
         mv $file pictures-svg/$normalized.svg
@@ -72,33 +72,8 @@ echo "creating symlinks"
 
 create_symlink() {
     EXT=$1
+
     ln -sf 8devices-jalapeno-board.$EXT 8devices-jalapeno.$EXT
-    ln -sf d-link-dap-x1860.$EXT d-link-dap-x1860-a1.$EXT
-    ln -sf netgear-ex6150.$EXT netgear-ex6100.$EXT
-    ln -sf netgear-ex6150.$EXT netgear-ex6150v2.$EXT
-    ln -sf netgear-dgn3500.$EXT netgear-dgn3500b.$EXT
-    ln -sf nexx-wt3020.$EXT nexx-wt3020ad.$EXT
-    ln -sf nexx-wt3020.$EXT nexx-wt3020f.$EXT
-    ln -sf nexx-wt3020.$EXT nexx-wt3020h.$EXT
-
-    # replace dash with dot for firmware selector
-    # TODO should be fixed in firmware selector
-    ln -sf gl-inet-gl-ar150.$EXT gl.inet-gl-ar150.$EXT
-    ln -sf gl-inet-gl-ar300m.$EXT gl.inet-gl-ar300m-lite.$EXT
-    ln -sf gl-inet-gl-ar300m.$EXT gl.inet-gl-ar300m.$EXT
-    ln -sf gl-inet-gl-ar750.$EXT gl.inet-gl-ar750.$EXT
-    ln -sf gl-inet-gl-ar750s.$EXT gl.inet-gl-ar750s-nor.$EXT
-    ln -sf gl-inet-gl-ar750s.$EXT gl.inet-gl-ar750s.$EXT
-    ln -sf gl-inet-gl-b1300.$EXT gl.inet-gl-b1300.$EXT
-    ln -sf gl-inet-vixmini.$EXT gl.inet-vixmini.$EXT
-    ln -sf gl-inet-microuter-n300.$EXT gl.inet-microuter-n300.$EXT
-
-    ln -sf raspberrypi.$EXT raspberry-pi-modelb-b-rev-1.$EXT
-    ln -sf raspberrypi.$EXT raspberry-pi-modelb-b-rev-2.$EXT
-    ln -sf raspberrypi-2.$EXT raspberry-pi-2-model-b-rev-1-1.$EXT
-    ln -sf raspberrypi-3.$EXT raspberry-pi-3-model-b-rev-1-2.$EXT
-
-    # symlinks
     ln -sf aerohive-ap330.$EXT aerohive-hiveap-330.$EXT
     ln -sf aerohive-hiveap-121.$EXT aerohive-ap121.$EXT
     ln -sf alfa-ap121.$EXT alfa-ap121u.$EXT
@@ -108,16 +83,25 @@ create_symlink() {
     ln -sf avm-fritz-box-7360-v2.$EXT avm-fritz-box-7360.$EXT
     ln -sf avm-fritz-wlan-repeater-450e.$EXT avm-fritz-wlan-repeater-300e.$EXT
     ln -sf devolo-wifi-pro-1200i.$EXT devolo-wifi-pro-1750i.$EXT
+    ln -sf d-link-dap-x1860.$EXT d-link-dap-x1860-a1.$EXT
     ln -sf d-link-dir-825-rev-b1.$EXT d-link-dir-825b1.$EXT
     ln -sf gl-inet-6408a-v1.$EXT gl-inet-6416a-v1.$EXT
     ln -sf gl-inet-gl-ar300m16.$EXT gl-inet-gl-ar300m-nor.$EXT
+    ln -sf gl.inet-gl-ar300m.$EXT gl.inet-gl-ar300m-lite.$EXT
+    ln -sf gl.inet-gl-ar750s.$EXT gl.inet-gl-ar750s-nor.$EXT
+    ln -sf netgear-dgn3500.$EXT netgear-dgn3500b.$EXT
     ln -sf netgear-ex3700.$EXT netgear-ex3800.$EXT
     ln -sf netgear-ex3700.$EXT netgear-ex3700-ex3800.$EXT
+    ln -sf netgear-ex6150.$EXT netgear-ex6100.$EXT
+    ln -sf netgear-ex6150.$EXT netgear-ex6150v2.$EXT
     ln -sf netgear-r6220.$EXT netgear-wac104.$EXT
     ln -sf netgear-r7800.$EXT netgear-nighthawk-x4s-r7800.$EXT
     ln -sf netgear-wndr3700.$EXT netgear-wndr3700v2.$EXT
     ln -sf netgear-wndr3700.$EXT netgear-wndr3700v4.$EXT
     ln -sf netgear-wndr3800.$EXT netgear-wndr3800chmychart.$EXT
+    ln -sf nexx-wt3020.$EXT nexx-wt3020ad.$EXT
+    ln -sf nexx-wt3020.$EXT nexx-wt3020f.$EXT
+    ln -sf nexx-wt3020.$EXT nexx-wt3020h.$EXT
     ln -sf ocedo-koala.$EXT ocedo-raccoon.$EXT
     ln -sf openmesh-a40.$EXT openmesh-a42.$EXT
     ln -sf openmesh-a40.$EXT openmesh-a60.$EXT
@@ -130,6 +114,10 @@ create_symlink() {
     ln -sf openmesh-om2p.$EXT openmesh-om2p-hs.$EXT
     ln -sf openmesh-om5p.$EXT openmesh-om5p-an.$EXT
     ln -sf openmesh-om5p.$EXT openmesh-om5p-ac.$EXT
+    ln -sf raspberrypi.$EXT raspberry-pi-modelb-b-rev-1.$EXT
+    ln -sf raspberrypi.$EXT raspberry-pi-modelb-b-rev-2.$EXT
+    ln -sf raspberrypi-2.$EXT raspberry-pi-2-model-b-rev-1.1.$EXT
+    ln -sf raspberrypi-3.$EXT raspberry-pi-3-model-b-rev-1.2.$EXT
     ln -sf tp-link-archer-c20i.$EXT tp-link-archer-c20i-alle.$EXT
     ln -sf tp-link-archer-c6-v2.$EXT tp-link-archer-c6-v2-eu-ru-jp.$EXT
     ln -sf tp-link-archer-c60-v2.$EXT tp-link-archer-c60-v1.$EXT
@@ -164,6 +152,7 @@ create_symlink() {
     ln -sf tp-link-tl-wa830re-v2.$EXT tp-link-tl-wa830re-v1.$EXT
     ln -sf tp-link-tl-wa901n-nd-v1.$EXT tp-link-tl-wa901n-nd-v2.$EXT
     ln -sf tp-link-tl-wdr3600-v1.$EXT tp-link-td-w8970-alle.$EXT
+    ln -sf tp-link-tl-wdr3600-v1.$EXT tp-link-tl-wdr3500-v1.$EXT
     ln -sf tp-link-tl-wdr4300-v1.$EXT tp-link-tl-wdr4900-v1.$EXT
     ln -sf tp-link-tl-wr1043nd-v2.$EXT tp-link-tl-wr1043n-nd-v2.$EXT
     ln -sf tp-link-tl-wr1043nd-v2.$EXT tp-link-tl-wr1043n-nd-v3.$EXT
@@ -238,6 +227,12 @@ cd ..
 if [ -n "$CREATE_JPG" ];then
     cd pictures-jpg
     create_symlink jpg
+    wget https://raw.githubusercontent.com/freifunk-darmstadt/gluon-firmware-selector/master/pictures/no_picture_available.jpg
+    wget https://raw.githubusercontent.com/freifunk-darmstadt/gluon-firmware-selector/master/pictures/x86-generic.img.jpg
+    wget https://raw.githubusercontent.com/freifunk-darmstadt/gluon-firmware-selector/master/pictures/x86-kvm.img.jpg
+    wget https://raw.githubusercontent.com/freifunk-darmstadt/gluon-firmware-selector/master/pictures/x86-legacy.img.jpg
+    wget https://raw.githubusercontent.com/freifunk-darmstadt/gluon-firmware-selector/master/pictures/x86-virtualbox.vdi.jpg
+    wget https://raw.githubusercontent.com/freifunk-darmstadt/gluon-firmware-selector/master/pictures/x86-vmware.vmdk.jpg
     cd ..
     cd pictures-png
     create_symlink png
