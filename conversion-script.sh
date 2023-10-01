@@ -85,6 +85,7 @@ create_symlink() {
     ln -sf devolo-wifi-pro-1200i.$EXT devolo-wifi-pro-1750i.$EXT
     ln -sf d-link-dap-x1860.$EXT d-link-dap-x1860-a1.$EXT
     ln -sf d-link-dir-825-rev-b1.$EXT d-link-dir-825b1.$EXT
+    ln -sf d-link-dir-860l.$EXT d-link-dir-860l-b1.$EXT
     ln -sf gl-inet-6408a-v1.$EXT gl-inet-6416a-v1.$EXT
     ln -sf gl-inet-gl-ar300m16.$EXT gl-inet-gl-ar300m-nor.$EXT
     ln -sf gl.inet-gl-ar300m.$EXT gl.inet-gl-ar300m-lite.$EXT
