@@ -5,19 +5,23 @@ set -o pipefail  # avoid masking failures in pipes
 shopt -s nullglob  # do not run loops if the glob has not found anything
 
 # recreating svg images from external sources
-CREATE_INITIAL=
+CREATE_INITIAL=${CREATE_INITIAL:-}
 # convert svg to jpg and png if needed
-CREATE_JPG=true
+CREATE_JPG=${CREATE_JPG:-true}
+
+CURRENT_DIR=$PWD
 
 if [ -n "$CREATE_INITIAL" ];then
     echo "cloning repos into repos"
     mkdir -p repos
-    cd repos
+    pushd "$CURRENT_DIR"/repos || exit
+    set +e
     git clone https://github.com/belzebub40k/router-pics.git
     git clone https://github.com/Moorviper/Freifunk-Router-Anleitungen
     git clone https://github.com/nalxnet/freifunk-device-images
     git clone https://github.com/freifunkstuff/meshviewer-hwimages
-    cd ..
+    set -e
+    popd
 
     echo "cloning pictures into pictures-svg"
     mkdir -p pictures-svg
@@ -30,15 +34,16 @@ if [ -n "$CREATE_INITIAL" ];then
         cp "$file" pictures-svg/"$routername".svg
     done;
 
-    cd pictures-svg
+    pushd "$CURRENT_DIR"/pictures-svg
+    set +e
     # wrong model name
     mv gl.inet_gl-mt300a.svg gl-mt300a.svg
     mv gl.inet_gl-mt300n.svg gl-mt300n.svg
     mv gl.inet_gl-mt750.svg gl-mt750.svg
+    mv gl.inet_vixmini.svg gl-inet-vixmini.svg
     mv ocedo_indoor.svg ocedo-koala.svg
-
-    # meshviewer does not use version
-    mv d-link-dap-x1860-a1.svg d-link-dap-x1860.svg
+    # duplicate - 3d version available
+    rm gl.inet-gl-ar750.svg
 
     mv netgear-ex6150v2.svg netgear-ex6150.svg
     # raspberry devices have been renamed
@@ -47,12 +52,13 @@ if [ -n "$CREATE_INITIAL" ];then
     mv raspberry-pi_v3-model-b.svg raspberrypi-3.svg
     mv openmesh_om2p-hs.svg openmesh-om2p.svg
     mv openmesh_om5p-ac.svg openmesh-om5p.svg
-    cd ..
+    set -e
+    popd
 
     echo "finished cloning sources"
 fi
 
-if [ -n "$CREATE_JPG" ];then
+if [[ "${CREATE_JPG}" == "true" ]]; then
     echo "creating jpg folders"
     mkdir -p pictures-jpg
     mkdir -p pictures-png
@@ -66,7 +72,7 @@ for file in pictures-svg/*.svg; do
     if [ "$file" != "pictures-svg/$normalized.svg" ]; then
         mv "$file" pictures-svg/"$normalized".svg
     fi
-    if [ -n "$CREATE_JPG" ];then
+    if [[ "${CREATE_JPG}" == "true" ]]; then
         inkscape "pictures-svg/$normalized.svg" --batch-process --export-type=png --export-filename="pictures-png/$normalized.png" --export-background-opacity=0
         convert "pictures-png/$normalized.png" -background white -flatten -alpha off "pictures-jpg/$normalized.jpg"
     fi
@@ -88,13 +94,19 @@ create_symlink() {
     ln -sf avm-fritz-box-7360-v2.$EXT avm-fritz-box-7360.$EXT
     ln -sf avm-fritz-wlan-repeater-450e.$EXT avm-fritz-wlan-repeater-300e.$EXT
     ln -sf devolo-wifi-pro-1200i.$EXT devolo-wifi-pro-1750i.$EXT
-    ln -sf d-link-dap-x1860.$EXT d-link-dap-x1860-a1.$EXT
+    ln -sf d-link-dap-x1860-a1.$EXT d-link-dap-x1860.$EXT
+    ln -sf d-link-covr-x1860-a1.$EXT d-link-covr-x1860.$EXT
     ln -sf d-link-dir-825-rev-b1.$EXT d-link-dir-825b1.$EXT
     ln -sf d-link-dir-860l.$EXT d-link-dir-860l-b1.$EXT
     ln -sf gl-inet-6408a-v1.$EXT gl-inet-6416a-v1.$EXT
     ln -sf gl-inet-gl-ar300m16.$EXT gl-inet-gl-ar300m-nor.$EXT
-    ln -sf gl.inet-gl-ar300m.$EXT gl.inet-gl-ar300m-lite.$EXT
-    ln -sf gl.inet-gl-ar750s.$EXT gl.inet-gl-ar750s-nor.$EXT
+    ln -sf gl-inet-gl-ar300m.$EXT gl.inet-gl-ar300m-lite.$EXT
+    ln -sf gl-inet-gl-ar300m.$EXT gl.inet-gl-ar300m.$EXT
+    ln -sf gl-inet-gl-ar750.$EXT gl.inet-gl-ar750.$EXT
+    ln -sf gl-inet-gl-ar750s.$EXT gl.inet-gl-ar750s.$EXT
+    ln -sf gl-inet-gl-ar750s.$EXT gl.inet-gl-ar750s-nor.$EXT
+    ln -sf gl-inet-gl-ar150.$EXT gl.inet-gl-ar150.$EXT
+    ln -sf gl-inet-vixmini.$EXT gl.inet-vixmini.$EXT
     ln -sf netgear-dgn3500.$EXT netgear-dgn3500b.$EXT
     ln -sf netgear-ex3700.$EXT netgear-ex3800.$EXT
     ln -sf netgear-ex3700.$EXT netgear-ex3700-ex3800.$EXT
@@ -151,6 +163,7 @@ create_symlink() {
     ln -sf tp-link-cpe210.$EXT tp-link-cpe510-v1-1.$EXT
     ln -sf tp-link-cpe210.$EXT tp-link-cpe510-v1.$EXT
     ln -sf tp-link-cpe210.$EXT tp-link-cpe510-v1.$EXT
+    ln -sf tp-link-cpe210.$EXT tp-link-cpe510-v2.$EXT
     ln -sf tp-link-cpe210.$EXT tp-link-cpe510-v3.$EXT
     ln -sf tp-link-re200-v1.$EXT tp-link-re200-v2.$EXT
     ln -sf tp-link-re200-v1.$EXT tp-link-re200-v3.$EXT
@@ -226,6 +239,7 @@ create_symlink() {
     ln -sf ubiquiti-rocket-m.$EXT ubiquiti-rocket-m5.$EXT
     ln -sf ubiquiti-unifi-ac-lite.$EXT ubiquiti-unifi-ac-lite-mesh.$EXT
     ln -sf ubiquiti-unifi-ac-pro.$EXT ubiquiti-unifi-ap-pro.$EXT
+    ln -sf ubiquiti-unifi.$EXT ubiquiti-unifi-ap.$EXT
     ln -sf vocore-v2.$EXT vocore2.$EXT
     ln -sf wd-my-net-n600.$EXT wd-my-net-n750.$EXT
     ln -sf xiaomi-mi-router-4a-gigabit-edition.$EXT xiaomi-mi-router-4a-100m-edition.$EXT
@@ -234,16 +248,16 @@ create_symlink() {
     ln -sf avm-fritz-box-3370.$EXT avm-fritz-box-3370-rev-2-hynix-nand.$EXT
 }
 
-cd pictures-svg
+pushd "$CURRENT_DIR"/pictures-svg
 create_symlink svg
-cd ..
+popd
 
 if [ -n "$CREATE_JPG" ];then
-    cd pictures-jpg
+    pushd "$CURRENT_DIR"/pictures-jpg
     create_symlink jpg
 
-    cd ..
-    cd pictures-png
+    popd
+    pushd "$CURRENT_DIR"/pictures-png
     create_symlink png
-    cd ..
+    popd
 fi
