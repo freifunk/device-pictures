@@ -1,0 +1,29 @@
+---
+    name: SVG Linting
+
+    on:  # yamllint disable-line rule:truthy
+      workflow_dispatch:
+      push:
+        paths:
+          - '**.svg'
+      pull_request:
+        paths:
+          - '**.svg'
+
+    jobs:
+      svglint:
+        name: svglint
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - name: install svglint
+            run: |
+                wget https://github.com/birjj/svglint/archive/refs/tags/v2.6.0.tar.gz
+                tar xvf v2.6.0.tar.gz
+                cd svglint-2.6.0
+                npm install
+                echo "SVGLINT=$PWD/bin/cli.js" >> $GITHUB_ENV
+
+          - name: run svglint
+            run: |
+                "${SVGLINT}" ./pictures-svg/*.svg
