@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -eEu
+set -o pipefail  # avoid masking failures in pipes
+shopt -s nullglob  # do not run loops if the glob has not found anything
+
 # recreating svg images from external sources
 CREATE_INITIAL=
 # convert svg to jpg and png if needed
@@ -23,7 +27,7 @@ if [ -n "$CREATE_INITIAL" ];then
     for file in repos/Freifunk-Router-Anleitungen/router/**/front.svg; do
         cutfront=${file##repos/Freifunk-Router-Anleitungen/router/}
         routername=${cutfront%%/front.svg}
-        cp $file pictures-svg/$routername.svg
+        cp "$file" pictures-svg/"$routername".svg
     done;
 
     cd pictures-svg
@@ -57,19 +61,20 @@ fi
 for file in pictures-svg/*.svg; do
     normalized=${file##pictures-svg/}
     normalized=${normalized%.svg}
-    normalized="$(echo $normalized | sed -e 's/fritzbox/fritz-box/ig' -e 's/[^a-z0-9\.\-]/-/ig')"
-    
+    normalized="$(echo "$normalized" | sed -e 's/fritzbox/fritz-box/ig' -e 's/[^a-z0-9\.\-]/-/ig')"
+
     if [ "$file" != "pictures-svg/$normalized.svg" ]; then
-        mv $file pictures-svg/$normalized.svg
+        mv "$file" pictures-svg/"$normalized".svg
     fi
     if [ -n "$CREATE_JPG" ];then
-        inkscape pictures-svg/$normalized.svg --batch-process --export-type=png --export-filename="pictures-png/$normalized.png"
+        inkscape pictures-svg/"$normalized".svg --batch-process --export-type=png --export-filename="pictures-png/$normalized.png"
         convert "pictures-png/$normalized.png" "pictures-jpg/$normalized.jpg"
     fi
 done;
 
 echo "creating symlinks"
 
+# shellcheck disable=SC2086
 create_symlink() {
     EXT=$1
 
@@ -198,8 +203,8 @@ create_symlink() {
     ln -sf tp-link-tl-wr941n-nd-v2.$EXT tp-link-tl-wr941n-nd-v3.$EXT
     ln -sf tp-link-tl-wr941n-nd-v2.$EXT tp-link-tl-wr941n-nd-v4.$EXT
     ln -sf tp-link-tl-wr941n-nd-v2.$EXT tp-link-tl-wr941n-nd-v5.$EXT
-    ln -sf tp-link-wbs210.$EXT tp-link-wbs210-v1-20.$EXT 
-    ln -sf tp-link-wbs210.$EXT tp-link-wbs210-v1.$EXT 
+    ln -sf tp-link-wbs210.$EXT tp-link-wbs210-v1-20.$EXT
+    ln -sf tp-link-wbs210.$EXT tp-link-wbs210-v1.$EXT
     ln -sf tp-link-wbs210.$EXT tp-link-wbs510-v1-20.$EXT
     ln -sf tp-link-wbs210.$EXT tp-link-wbs510-v1.$EXT
     ln -sf tp-link-wbs210.$EXT tp-link-wbs210-v2.$EXT
@@ -226,7 +231,7 @@ create_symlink() {
     ln -sf xiaomi-mi-router-4a-gigabit-edition.$EXT xiaomi-mi-router-4a-100m-edition.$EXT
     ln -sf xiaomi-mi-router-4a-gigabit-edition.$EXT xiaomi-mi-router-4a-100m-international-edition.$EXT
     ln -sf xiaomi-mi-router-4c.$EXT xiaomi-mi-router-3g.$EXT
-    ln -sf avm-fritz-box-3370.$EXT avm-fritz-box-3370-rev-2-hynix-nand.$EXT    
+    ln -sf avm-fritz-box-3370.$EXT avm-fritz-box-3370-rev-2-hynix-nand.$EXT
 }
 
 cd pictures-svg
