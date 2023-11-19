@@ -244,11 +244,6 @@ if [ -n "$CREATE_JPG" ];then
 
     declare -a placeholder_images=(
         "no_picture_available.jpg"
-        "x86-generic.img.jpg"
-        "x86-kvm.img.jpg"
-        "x86-legacy.img.jpg"
-        "x86-virtualbox.vdi.jpg"
-        "x86-vmware.vmdk.jpg"
     )
     for file in "${placeholder_images[@]}"
     do
