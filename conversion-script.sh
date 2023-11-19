@@ -90,6 +90,9 @@ for file in pictures-svg/*.svg; do
         ln -sf "$link_name.jpg" "pictures-jpg/$normalized.jpg"
     else
         inkscape "pictures-svg/$normalized.svg" --batch-process --export-type=png --export-filename="pictures-png/$normalized.png" --export-background-opacity=0
-        convert "pictures-png/$normalized.png" -background white -flatten -alpha off "pictures-jpg/$normalized.jpg"
+        # as not all SVG are updated to have no borders, trim unnecessary white borders from png
+        mogrify -trim "pictures-png/$normalized.png"
+        # even though mogrify trims the png, we need to trim again for the jpg
+        convert "pictures-png/$normalized.png" -background white -flatten -alpha off -trim "pictures-jpg/$normalized.jpg"
     fi
 done;
