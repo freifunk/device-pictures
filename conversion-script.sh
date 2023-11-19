@@ -70,7 +70,7 @@ for file in pictures-svg/*.svg; do
     normalized="$(echo "$normalized" | sed -e 's/fritzbox/fritz-box/ig' -e 's/[^a-z0-9\.\-]/-/ig')"
 
     if [ "$file" == "pictures-svg/no_picture_available.svg" ]; then
-        continue
+        normalized="no_picture_available"
     fi
 
     if [ "$file" != "pictures-svg/$normalized.svg" ]; then
