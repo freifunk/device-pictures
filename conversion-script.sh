@@ -68,7 +68,7 @@ for file in pictures-svg/*.svg; do
     fi
     if [ -n "$CREATE_JPG" ];then
         inkscape pictures-svg/"$normalized".svg --batch-process --export-type=png --export-filename="pictures-png/$normalized.png"
-        convert "pictures-png/$normalized.png" "pictures-jpg/$normalized.jpg"
+        convert "pictures-png/$normalized.png" -background white -flatten -alpha off "pictures-jpg/$normalized.jpg"
     fi
 done;
 
