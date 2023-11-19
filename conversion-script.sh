@@ -69,6 +69,10 @@ for file in pictures-svg/*.svg; do
     normalized=${normalized%.svg}
     normalized="$(echo "$normalized" | sed -e 's/fritzbox/fritz-box/ig' -e 's/[^a-z0-9\.\-]/-/ig')"
 
+    if [ "$file" == "pictures-svg/no_picture_available.svg" ]; then
+        continue
+    fi
+
     if [ "$file" != "pictures-svg/$normalized.svg" ]; then
         mv "$file" pictures-svg/"$normalized".svg
     fi
@@ -82,6 +86,7 @@ done;
 # shellcheck disable=SC2086
 create_symlink() {
     EXT=$1
+    set +e
 
     echo "creating symlinks"
     ln -sf 8devices-jalapeno-board.$EXT 8devices-jalapeno.$EXT
@@ -246,6 +251,7 @@ create_symlink() {
     ln -sf xiaomi-mi-router-4a-gigabit-edition.$EXT xiaomi-mi-router-4a-100m-international-edition.$EXT
     ln -sf xiaomi-mi-router-4c.$EXT xiaomi-mi-router-3g.$EXT
     ln -sf avm-fritz-box-3370.$EXT avm-fritz-box-3370-rev-2-hynix-nand.$EXT
+    set -e
 }
 
 pushd "$CURRENT_DIR"/pictures-svg
