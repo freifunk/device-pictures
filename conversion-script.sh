@@ -242,23 +242,6 @@ if [ -n "$CREATE_JPG" ];then
     cd pictures-jpg
     create_symlink jpg
 
-    declare -a placeholder_images=(
-        "no_picture_available.jpg"
-        "x86-generic.img.jpg"
-        "x86-kvm.img.jpg"
-        "x86-legacy.img.jpg"
-        "x86-virtualbox.vdi.jpg"
-        "x86-vmware.vmdk.jpg"
-    )
-    for file in "${placeholder_images[@]}"
-    do
-        if [[ -f "${file}" ]]; then
-            echo "Skipping existing file ${file}"
-            continue
-        fi
-        wget "https://raw.githubusercontent.com/freifunk-darmstadt/gluon-firmware-selector/master/pictures/${file}"
-    done
-
     cd ..
     cd pictures-png
     create_symlink png
