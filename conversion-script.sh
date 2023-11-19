@@ -48,9 +48,9 @@ if [ -n "$CREATE_INITIAL" ];then
     mv openmesh_om2p-hs.svg openmesh-om2p.svg
     mv openmesh_om5p-ac.svg openmesh-om5p.svg
     cd ..
-fi
 
-echo "finished cloning sources"
+    echo "finished cloning sources"
+fi
 
 if [ -n "$CREATE_JPG" ];then
     echo "creating jpg folders"
@@ -72,12 +72,12 @@ for file in pictures-svg/*.svg; do
     fi
 done;
 
-echo "creating symlinks"
 
 # shellcheck disable=SC2086
 create_symlink() {
     EXT=$1
 
+    echo "creating symlinks"
     ln -sf 8devices-jalapeno-board.$EXT 8devices-jalapeno.$EXT
     ln -sf aerohive-ap330.$EXT aerohive-hiveap-330.$EXT
     ln -sf aerohive-hiveap-121.$EXT aerohive-ap121.$EXT
