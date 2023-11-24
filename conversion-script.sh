@@ -93,6 +93,6 @@ for file in pictures-svg/*.svg; do
         # as not all SVG are updated to have no borders, trim unnecessary white borders from png
         mogrify -trim "pictures-png/$normalized.png"
         # even though mogrify trims the png, we need to trim again for the jpg
-        convert "pictures-png/$normalized.png" -background white -flatten -alpha off -trim "pictures-jpg/$normalized.jpg"
+        convert "pictures-png/$normalized.png" -resize 65536@\> -background white -flatten -alpha off -trim "pictures-jpg/$normalized.jpg"
     fi
 done;
