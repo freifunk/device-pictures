@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="515" version="1.1" viewBox="0 0 500 515" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Jan Alexander</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+    <cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <g stroke="#666">
+  <g transform="translate(0,7.5)" stroke-width="1px">
+   <path d="m276.18 175.34v-86.69l2.828-16.988v-47.636c0-3.4881 3.6778-3.55 3.6778 0v47.636l2.9514 16.988v86.69z" fill="#f2f2f2"/>
+   <g fill="none">
+    <path d="m276.18 165.27h9.4571"/>
+    <path d="m276.18 167.38h9.4571"/>
+    <path d="m276.18 169.36h9.4571"/>
+    <path d="m279.11 31.485h3.6778"/>
+   </g>
+  </g>
+  <g transform="translate(-55.068 7.4997)" stroke-width="1px">
+   <path d="m276.18 175.34v-86.69l2.828-16.988v-47.636c0-3.4881 3.6778-3.55 3.6778 0v47.636l2.9514 16.988v86.69z" fill="#f2f2f2"/>
+   <g fill="none">
+    <path d="m276.18 165.27h9.4571"/>
+    <path d="m276.18 167.38h9.4571"/>
+    <path d="m276.18 169.36h9.4571"/>
+    <path d="m279.11 31.485h3.6778"/>
+   </g>
+  </g>
+  <g transform="rotate(180 253.19 253.77)" stroke-width="1px">
+   <path d="m276.18 175.34v-86.69l2.828-16.988v-47.636c0-3.4881 3.6778-3.55 3.6778 0v47.636l2.9514 16.988v86.69z" fill="#f2f2f2"/>
+   <g fill="none">
+    <path d="m276.18 165.27h9.4571"/>
+    <path d="m276.18 167.38h9.4571"/>
+    <path d="m276.18 169.36h9.4571"/>
+    <path d="m279.11 31.485h3.6778"/>
+   </g>
+  </g>
+  <g transform="rotate(180 281.47 253.77)" stroke-width="1px">
+   <path d="m276.18 175.34v-86.69l2.828-16.988v-47.636c0-3.4881 3.6778-3.55 3.6778 0v47.636l2.9514 16.988v86.69z" fill="#f2f2f2"/>
+   <g fill="none">
+    <path d="m276.18 165.27h9.4571"/>
+    <path d="m276.18 167.38h9.4571"/>
+    <path d="m276.18 169.36h9.4571"/>
+    <path d="m279.11 31.485h3.6778"/>
+   </g>
+  </g>
+  <rect x="208.06" y="182.84" width="90.868" height="149.59" ry="7.3555" fill="#f2f2f2"/>
+  <rect x="242.03" y="306.66" width="23.643" height="17.338" ry="3.6778" fill="none"/>
+ </g>
+</svg>
