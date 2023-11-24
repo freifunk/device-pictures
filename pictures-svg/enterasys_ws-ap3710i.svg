@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="540" height="540" version="1.1" viewBox="0 0 540 540" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Jan Alexander</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+    <cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <g>
+  <rect x="45.785" y="33.328" width="448.43" height="473.34" ry="30.973" fill="#f2f2f2" stroke="#666" stroke-linejoin="round"/>
+  <g stroke="#666" stroke-linejoin="round">
+   <circle cx="395.68" cy="457.23" r="3" fill="#0f0"/>
+   <circle cx="418.68" cy="457.23" r="3" fill="#3578ff"/>
+   <circle cx="440.68" cy="457.23" r="3" fill="#0f0"/>
+   <circle cx="440.68" cy="435.23" r="3" fill="#0f0"/>
+  </g>
+  <g transform="translate(12.185 -.27183)" fill="none" stroke="#666">
+   <ellipse cx="383.53" cy="474.82" rx="6.2681" ry="6.2681" stroke-linejoin="round"/>
+   <path transform="translate(161.64 188.15)" d="m221.77 292.92-3.0941-6.1124 6.0644-0.4-2.9703-5.8639" stroke-width="1px"/>
+  </g>
+  <g transform="translate(12.185 -.27183)" fill="none" stroke="#666">
+   <g>
+    <rect x="403.52" y="468.45" width="5.8168" height="4.5792" ry="0"/>
+    <rect x="408.6" y="476.58" width="5.8168" height="4.5792" ry="0"/>
+    <rect x="398.3" y="476.58" width="5.8168" height="4.5792" ry="0"/>
+   </g>
+   <g stroke-width="1px">
+    <path transform="translate(161.64 188.15)" d="m239.35 288.46v-1.8564"/>
+    <path transform="translate(161.64 188.15)" d="m249.74 288.34v-1.7327"/>
+    <path transform="translate(161.64 188.15)" d="m234.52 286.6h20.173"/>
+    <path transform="translate(161.64 188.15)" d="m244.79 285v1.6089"/>
+   </g>
+  </g>
+  <g transform="translate(12.185 -.27183)" stroke="#666">
+   <circle cx="425.72" cy="478.16" r="3" fill="#666"/>
+   <g fill="none">
+    <path transform="translate(161.64 188.15)" d="m264.06 285.03a5 5 0 0 1 5 5"/>
+    <path transform="translate(161.64 188.15)" d="m264.01 283.05a7 7 0 0 1 7 7"/>
+    <path transform="translate(161.64 188.15)" d="m264.05 281.02a9 9 0 0 1 9 9"/>
+   </g>
+  </g>
+  <g fill="#666" aria-label="1">
+   <path d="m455.12 461.73v-7.5391l-1.7422 0.69531v-0.96093l1.7422-0.80469h1.0312v8.6094z" fill="#666"/>
+  </g>
+  <g fill="#666" aria-label="2">
+   <path d="m453.52 439.46v-0.89062q0-0.70313 0.42969-1.5234 0.4375-0.82813 1.4609-1.6094l0.57812-0.45312q1.1641-0.89844 1.4844-1.3438 0.3125-0.44531 0.3125-0.92188 0-0.5-0.42188-0.88281-0.41406-0.38281-1.1953-0.38281-0.71094 0-1.0547 0.28125-0.34375 0.27344-0.34375 0.61719v0.0547h-1.0312v-0.0547q0-0.45313 0.30469-0.85938 0.3125-0.40625 0.83594-0.64844 0.52344-0.25 1.3203-0.25 1.4609 0 2.0781 0.625 0.625 0.61719 0.625 1.4844 0 0.45312-0.19532 0.92187-0.19531 0.46875-0.77343 0.97657-0.57032 0.50781-0.92969 0.75781l-0.42188 0.28906q-1.9844 1.3594-1.9844 2.6562v0.21094h4.4766v0.94531z"/>
+  </g>
+ </g>
+</svg>
