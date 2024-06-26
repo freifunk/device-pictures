@@ -3,14 +3,11 @@ name: Shell Linting
 
 on:  # yamllint disable-line rule:truthy
   workflow_dispatch:
-  push:
-    paths-ignore:
-      - '.github/workflows/**'
-      - '**.svg'
   pull_request:
     paths-ignore:
       - '.github/workflows/**'
       - '**.svg'
+  workflow_call:
 
 jobs:
   shellcheck:
@@ -26,3 +23,4 @@ jobs:
           filter_mode: "file"
           fail_on_error: true
           check_all_files_with_shebangs: true
+          reporter: github-check
