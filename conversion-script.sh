@@ -94,5 +94,7 @@ for file in pictures-svg/*.svg; do
         mogrify -trim "pictures-png/$normalized.png"
         # even though mogrify trims the png, we need to trim again for the jpg
         convert "pictures-png/$normalized.png" -resize 256x256 -background white -flatten -alpha off -trim "pictures-jpg/$normalized.jpg"
+        # transfer license and author tags to jpg
+        exiftool -overwrite_original -tagsfromfile "pictures-png/$normalized.png" "pictures-jpg/$normalized.jpg"
     fi
 done;
