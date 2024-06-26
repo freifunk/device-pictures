@@ -3,12 +3,10 @@
 
     on:  # yamllint disable-line rule:truthy
       workflow_dispatch:
-      push:
-        paths:
-          - '**.svg'
       pull_request:
         paths:
           - '**.svg'
+      workflow_call:
 
     jobs:
       svglint:

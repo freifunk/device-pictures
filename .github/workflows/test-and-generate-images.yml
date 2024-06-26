@@ -1,0 +1,21 @@
+---
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '.gitignore'
+    branches:
+      - main
+
+jobs:
+  shellcheck:
+    uses: ./.github/workflows/shellcheck.yml
+
+  svglint:
+    uses: ./.github/workflows/svglint.yml
+
+  generate-images:
+    needs:
+        - shellcheck
+        - svglint
+    uses: ./.github/workflows/generate-images.yml
