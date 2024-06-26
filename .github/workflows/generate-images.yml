@@ -1,0 +1,52 @@
+---
+name: SVG Linting
+
+on:  # yamllint disable-line rule:truthy
+  workflow_dispatch:
+  # run after svglint passed
+  workflow_run:
+    workflows:
+      - "SVG Linting"
+    branches:
+      - main
+    types:
+      - completed
+
+jobs:
+  conversion:
+    name: Generate Images
+    runs-on: ubuntu-latest
+    container:
+      image: linuxserver/inkscape:1.3.2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install imagemagick
+        run: |
+            apk --no-cache add imagemagick
+
+      - name: convert images
+        run: |
+            ./conversion-script.sh
+
+      - name: compress images
+        run: |
+            # This is required to preserve symlinks
+            tar cvfJ device-pictures-jpg.tar.xz pictures-jpg/
+            tar cvfJ device-pictures-png.tar.xz pictures-png/
+
+      - name: upload JPG archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: device-pictures-jpg
+          compression-level: 0 # tar is already compressed
+          if-no-files-found: error
+          path: device-pictures-jpg.xz
+
+      - name: upload PNG archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: device-pictures-png
+          compression-level: 0 # tar is already compressed
+          if-no-files-found: error
+          path: device-pictures-png.xz
