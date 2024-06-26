@@ -4,7 +4,9 @@ This repository contains vector graphics of routers used in the [Gluon-Firmware-
 It can be equally used for OpenWRT Firmware selectors and the like.
 
 This unifies the valuable work started by [Daniel Krah](https://github.com/Moorviper/Freifunk-Router-Anleitungen), [Julian Labus](https://github.com/belzebub40k/router-pics), [Jan Alexander](https://github.com/nalxnet/freifunk-device-images) and [freifunkstuff](https://github.com/freifunkstuff/meshviewer-hwimages).
-The Pictures are available under [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+The pictures are available under [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), with exceptions.
+Any such exception is marked with a `cc:License` or `cc:license` tag within the respective SVG file or as metadata within the PNG or JPG files.
 
 ## Creating JPG and PNG
 
