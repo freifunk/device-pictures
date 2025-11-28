@@ -19,7 +19,7 @@ convert_file() {
 }
 
 # Take optional file, to only convert one file (or another path)
-FILE_PATH=${1:-STANDARD_PATH}
+FILE_PATH=${1:-$STANDARD_PATH}
 
 # convert svg to jpg and png if needed
 CREATE_JPG=${CREATE_JPG:-true}
