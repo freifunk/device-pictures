@@ -3,7 +3,13 @@
 set -eEu
 set -o pipefail  # avoid masking failures in pipes
 shopt -s nullglob  # do not run loops if the glob has not found anything
+
+# The standard SVG path
 STANDARD_PATH="pictures-svg/*.svg"
+# Take optional file, to only convert one file (or another path)
+FILE_PATH=${1:-$STANDARD_PATH}
+# convert svg to jpg and png if needed
+CREATE_JPG=${CREATE_JPG:-true}
 
 convert_file() {
     local file_path="$1"
@@ -17,12 +23,6 @@ convert_file() {
     # transfer license and author tags to jpg
     exiftool -overwrite_original -tagsfromfile "pictures-png/$normalized.png" "pictures-jpg/$normalized.jpg"
 }
-
-# Take optional file, to only convert one file (or another path)
-FILE_PATH=${1:-$STANDARD_PATH}
-
-# convert svg to jpg and png if needed
-CREATE_JPG=${CREATE_JPG:-true}
 
 if [[ "${CREATE_JPG}" == "true" ]]; then
     echo "creating jpg folders"
