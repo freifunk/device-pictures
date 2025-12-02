@@ -14,7 +14,8 @@ To create jpg and png files, you need to have imagemagick, exiftool and `inkscap
 
 `./conversion-script.sh <optional file path>`
 
-Output is written to `pictures-png` and `pictures-jpg` respectively.
+Output is written to `pictures-png` and `pictures-jpg` respectively.  
+Giving a folder as file path does currently not work.
 
 ## Symlinks
 
