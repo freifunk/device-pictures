@@ -10,11 +10,12 @@ Any such exception is marked with a `cc:License` or `cc:license` tag within the 
 
 ## Creating JPG and PNG
 
-To create jpg and png files, you need to have imagemagick and `inkscape` installed. Rune
+To create jpg and png files, you need to have imagemagick, exiftool and `inkscape` installed. Run
 
-`./conversion-script.sh`
+`./conversion-script.sh <optional file path>`
 
-Output is written to `pictures-png` and `pictures-jpg` respectively.
+Output is written to `pictures-png` and `pictures-jpg` respectively.  
+Giving a folder as file path does currently not work.
 
 ## Symlinks
 
