@@ -34,12 +34,12 @@ for file in $FILE_PATH; do
     normalized=${file##pictures-svg/}
     normalized=${normalized%.svg}
     normalized="$(echo "$normalized" | sed -e 's/fritzbox/fritz-box/ig' -e 's/[^a-z0-9\.\-]/-/ig')"
-    if [[ "${FILE_PATH}" == "${STANDARD_PATH}" ]]; then
-        file=pictures-svg/$normalized.svg
-    fi
-
     if [ "$file" == "pictures-svg/no_picture_available.svg" ]; then
         normalized="no_picture_available"
+    fi
+
+    if [[ "${FILE_PATH}" == "${STANDARD_PATH}" ]]; then
+        file=pictures-svg/$normalized.svg
     fi
 
     if [ "$file" != "pictures-svg/$normalized.svg" ]; then
