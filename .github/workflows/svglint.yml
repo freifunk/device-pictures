@@ -13,7 +13,7 @@
         name: svglint
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v4
+          - uses: actions/checkout@v6
           - name: install svglint
             run: |
                 wget https://github.com/birjj/svglint/archive/refs/tags/v2.6.0.tar.gz
