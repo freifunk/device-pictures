@@ -17,9 +17,9 @@ convert_file() {
 
     inkscape "${file_path}" --batch-process --export-type=png --export-filename="pictures-png/$normalized.png" --export-background-opacity=0
     # as not all SVG are updated to have no borders, trim unnecessary white borders from png
-    mogrify -trim "pictures-png/$normalized.png"
+    magick mogrify -trim "pictures-png/$normalized.png"
     # even though mogrify trims the png, we need to trim again for the jpg
-    convert "pictures-png/$normalized.png" -resize 65536@\> -background white -flatten -alpha off -trim "pictures-jpg/$normalized.jpg"
+    magick convert "pictures-png/$normalized.png" -resize 65536@\> -background white -flatten -alpha off -trim "pictures-jpg/$normalized.jpg"
     # transfer license and author tags to jpg
     exiftool -overwrite_original -tagsfromfile "pictures-png/$normalized.png" "pictures-jpg/$normalized.jpg"
 }
